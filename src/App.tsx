@@ -49,7 +49,7 @@ function App() {
       <div className="fixed top-6 right-6 z-50 flex items-center gap-3">
   {/* Download CV Button First */}
   <motion.a
-    href="/assets/cv.pdf" // Update the path to your CV
+    href="/assets/drin.dlr_CV.pdf" // Update the path to your CV
     download="Aldrin_CV.pdf"
     target="_blank"
     rel="noopener noreferrer"
