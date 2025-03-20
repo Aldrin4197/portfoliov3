@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import experienceData from "../data/experiencedata";
+import { experienceData } from "../data/experiencedata";
 
 // Animation variants for fading in items
 const fadeInVariants = {

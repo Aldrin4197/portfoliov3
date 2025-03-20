@@ -1,5 +1,7 @@
-// experienceData.ts
-interface ExperienceProps {
+// src/data/experienceData.ts
+
+// Define Experience data type
+export interface ExperienceProps {
   title: string;
   company: string;
   duration: string;
@@ -7,8 +9,8 @@ interface ExperienceProps {
   align: "start" | "end";
 }
 
-// Array of experience data
-const experienceData: ExperienceProps[] = [
+// Export experience data array
+export const experienceData: ExperienceProps[] = [
   {
     title: "Special Science Teacher",
     company: "DepEd Catbalogan",
@@ -34,5 +36,3 @@ const experienceData: ExperienceProps[] = [
     align: "start",
   },
 ];
-
-export default experienceData;

@@ -1,4 +1,4 @@
-import React from "react";
+
 import certificationsData from "../data/certificationsData";
 import { motion } from "framer-motion";
 
