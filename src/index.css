@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: light --default, cupcake, synthwave, abyss, night, sunset;
+}
+
+:root {
+
+  font-family: Consolas, monospace;
+  line-height: 1.5;
+  font-weight: 500;
+
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.badge-hover:hover {
+  @apply badge badge-primary; /* Apply DaisyUI's badge-primary style */
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.blinking-cursor {
+  display: inline-block;
+  width: 2px;
+  margin-left: 4px;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
