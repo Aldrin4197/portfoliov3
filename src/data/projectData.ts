@@ -24,7 +24,7 @@ export const projectData: ProjectItem[] = [
     desc: "Streamlines human resource processes and employee record management efficiently.",
     tech: ["Laravel", "MySQL", "Vue"],
     img: project1,
-    visitLink: "#",
+    visitLink: "https://icthrmo.ssuict.tech/",
     githubLink: "https://github.com/ssuict/hrmo",
   },
   {
@@ -33,7 +33,7 @@ export const projectData: ProjectItem[] = [
     desc: "Monitors and analyzes air quality data for environmental safety.",
     tech: ["Embedded Systems", "Laravel", "MySQL"],
     img: project2,
-    visitLink: "https://icthrmo.ssuict.tech/",
+    visitLink: "#",
     githubLink: "https://github.com/ssuict/airquality-monitoring",
   },
   {
