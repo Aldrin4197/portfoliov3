@@ -16,7 +16,7 @@ const certificationsData = [
     organization: "TESDA",
     date: "April 2021",
     description:
-      "Proven ability to design, develop, and manage robust cloud solutions using Google Cloud technologies.",
+      "A TESDA-accredited qualification in the Philippines that equips individuals with the necessary skills to install, maintain, and repair computer systems and networks. This certification is ideal for those seeking careers in IT support, technical assistance, and computer hardware/software servicing.",
     imgSrc: tesda,
   },
   {
@@ -24,7 +24,7 @@ const certificationsData = [
     organization: "Civil Service Commission",
     date: "July 2017",
     description:
-      "Validated knowledge of AWS architectural principles and cloud infrastructure.",
+      "A requirement for individuals aspiring to work in government positions, particularly in second-level (professional) positions, which include technical, supervisory, and managerial roles.",
     imgSrc: csc,
   },
 ];
