@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import avatar from "../assets/jjk.png"; // Change path if necessary
+import avatar from "../assets/ghib.png"; // Change path if necessary
 
 function Getintouch() {
   // Animation variants for fading in elements
