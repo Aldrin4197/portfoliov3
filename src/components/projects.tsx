@@ -25,7 +25,7 @@ function Projects() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <h2 className="font-bold text-primary">Recent Projects.</h2>
-          <p className="text-sm text-secondary-500 text-center p-4">
+          <p className="text-sm text-secondary-500 text-justify p-4">
             I've worked on a variety of projects, from simple websites to complex web applications. Here are a few of my favorites.
           </p>
         </motion.div>

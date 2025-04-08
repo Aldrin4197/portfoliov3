@@ -20,7 +20,7 @@ const iconVariants = {
 
 function Avatar() {
   return (
-    <div className="flex items-center justify-center gap-8 pt-25 pb-15">
+    <div className="flex flex-col md:flex-row items-center justify-center gap-8 pt-12 pb-10 text-center md:text-left">
       {/* Avatar Section */}
       <motion.div
         className="w-48 h-48 rounded-full flex items-center justify-center"
@@ -37,15 +37,19 @@ function Avatar() {
 
       {/* Text Section */}
       <motion.div
-        className="text-left"
+        className="mt-6 md:mt-0"
         initial={{ x: -50, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.3 }}
       >
-        <h1 className="text-6xl font-bold pt-8">
-          Hi, I’m <span className="text-primary hover:text-accent transition duration-500">Aldrin</span>
+        <h1 className="text-4xl md:text-6xl font-bold">
+          Hi, I’m{" "}
+          <span className="text-primary hover:text-accent transition duration-500">
+            Aldrin
+          </span>
         </h1>
-        <div className="text-2xl text-base-content font-bold text-left mt-2 mb-4">
+
+        <div className="text-xl md:text-2xl text-base-content font-bold mt-2 mb-4">
           <TypingAnimation
             steps={[
               "a Software Developer.",
@@ -59,7 +63,7 @@ function Avatar() {
         </div>
 
         {/* Social Icons */}
-        <div className="flex gap-4 justify-left">
+        <div className="flex gap-4 justify-center md:justify-start">
           {[
             {
               href: "https://www.linkedin.com/in/aldrin-jay-delos-reyes-559817267/",
@@ -102,5 +106,6 @@ function Avatar() {
     </div>
   );
 }
+
 
 export default Avatar;

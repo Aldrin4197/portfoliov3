@@ -22,7 +22,7 @@ function About() {
 
       {/* Animated Description */}
       <motion.div
-        className="text-md text-secondary-500 text-left"
+        className="text-md text-secondary-500 text-justify"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}

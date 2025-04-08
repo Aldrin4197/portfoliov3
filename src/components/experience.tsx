@@ -98,7 +98,7 @@ function Experience() {
               <div className="text-base text-secondary">
                 {item.company} <span className="text-gray-500">({item.duration})</span>
               </div>
-              <p className="text-sm text-secondary-500">{item.description}</p>
+              <p className="text-sm text-secondary-500 text-justify">{item.description}</p>
             </div>
 
             {/* Add HR line at the end except for the last item */}

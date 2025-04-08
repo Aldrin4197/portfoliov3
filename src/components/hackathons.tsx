@@ -20,7 +20,7 @@ const Hackathons: React.FC = () => {
       </motion.h2>
 
       <motion.h2
-        className="text-sm text-secondary-500 text-center mb-10"
+        className="text-sm text-secondary-500 text-justify mb-10"
         initial={{ opacity: 0, y: 50 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, delay: 0.2 }}

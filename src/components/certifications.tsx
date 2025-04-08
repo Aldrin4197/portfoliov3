@@ -37,13 +37,13 @@ function Certifications() {
 
               {/* Certification Info */}
               <div className="flex-grow text-left">
-                <div className="text-lg font-bold text-primary">
+                <div className="text-xl font-bold text-primary">
                   {cert.title}
                 </div>
                 <div className="text-base text-secondary">
                   {cert.organization} • {cert.date}
                 </div>
-                <p className="text-base text-secondary-500 pt-1">
+                <p className="text-base text-secondary-500 pt-1 text-justify">
                   {cert.description}
                 </p>
               </div>

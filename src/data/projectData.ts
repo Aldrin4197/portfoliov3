@@ -4,6 +4,7 @@ import project1 from "../assets/proj1.png";
 import project2 from "../assets/proj2.png";
 import project3 from "../assets/proj3.png";
 import project4 from "../assets/proj4.png";
+import project5 from "../assets/eaph.png";
 
 // Define the project item interface
 interface ProjectItem {
@@ -18,6 +19,15 @@ interface ProjectItem {
 
 // Export the project data array
 export const projectData: ProjectItem[] = [
+  {
+    title: "Equity Access PH",
+    status: "On-going",
+    desc: "Unified College Admission System for CHED",
+    tech: ["Laravel", "MySQL", "Vue", "React"],
+    img: project5,
+    visitLink: "https://equityaccessph.com",
+    githubLink: "#",
+  },
   {
     title: "SSU HRMO",
     status: "On-going",
