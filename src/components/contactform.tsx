@@ -103,15 +103,15 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        {/* Right Column (Form) */}
-        <form
+        {/* Right Column (Form) with Animation */}
+        <motion.form
+          initial="hidden"
+          animate="visible"
+          variants={fadeInVariants}
           onSubmit={sendEmail}
           className="card shadow-lg p-8 bg-base-100 space-y-4 w-full max-w-md mx-auto"
         >
-
           <div className="form-control">
-            <label className="label">
-            </label>
             <input
               type="text"
               name="name"
@@ -124,8 +124,6 @@ const Contact = () => {
           </div>
 
           <div className="form-control">
-            <label className="label">
-            </label>
             <input
               type="email"
               name="email"
@@ -138,8 +136,6 @@ const Contact = () => {
           </div>
 
           <div className="form-control">
-            <label className="label">
-            </label>
             <textarea
               name="message"
               value={form.message}
@@ -171,7 +167,7 @@ const Contact = () => {
               {status}
             </div>
           )}
-        </form>
+        </motion.form>
       </div>
     </div>
   );
