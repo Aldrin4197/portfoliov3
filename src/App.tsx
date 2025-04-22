@@ -8,11 +8,11 @@ import Projects from "./components/projects";
 import Hackathons from "./components/hackathons";
 import About from "./components/about";
 import Certifications from "./components/certifications";
-import Getintouch from "./components/getintouch";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaArrowUp } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import Stats from "./components/stats";
+import ContactForm from "./components/contactform";
 
 function App() {
   // State to show/hide scroll-to-top button
@@ -37,14 +37,10 @@ function App() {
   };
 
   // Global click handler to blur any focused element
-  const handleGlobalClick = () => {
-    if (document.activeElement instanceof HTMLElement) {
-      document.activeElement.blur();
-    }
-  };
+
 
   return (
-    <div onClick={handleGlobalClick} className="w-full h-full cursor-default">
+    <div className="w-full h-full cursor-default">
       {/* Top Right Controls (Mode Toggle + Download CV Button) */}
       <div className="fixed top-6 right-6 z-50 flex items-center gap-3">
   {/* Download CV Button First */}
@@ -84,7 +80,7 @@ function App() {
         <div className="divider"></div>
         <Hackathons />
         <div className="divider"></div>
-        <Getintouch />
+        <ContactForm />
         <div className="divider"></div>
       </div>
 
