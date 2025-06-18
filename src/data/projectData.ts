@@ -5,6 +5,10 @@ import project2 from "../assets/proj2.png";
 import project3 from "../assets/proj3.png";
 import project4 from "../assets/proj4.png";
 import project5 from "../assets/eaph.png";
+import project6 from "../assets/proj6.png";
+import project7 from "../assets/proj7.png";
+
+
 
 // Define the project item interface
 interface ProjectItem {
@@ -30,7 +34,7 @@ export const projectData: ProjectItem[] = [
   },
   {
     title: "SSU HRMO",
-    status: "On-going",
+    status: "Completed",
     desc: "Streamlines human resource processes and employee record management efficiently.",
     tech: ["Laravel", "MySQL", "Vue"],
     img: project1,
@@ -39,12 +43,30 @@ export const projectData: ProjectItem[] = [
   },
   {
     title: "Air Quality Monitoring",
-    status: "On-going",
+    status: "Completed",
     desc: "Monitors and analyzes air quality data for environmental safety.",
     tech: ["Embedded Systems", "Laravel", "MySQL"],
     img: project2,
-    visitLink: "#",
-    githubLink: "https://github.com/ssuict/airquality-monitoring",
+    visitLink: "https://airqualitymonitor.intspace.tech/",
+    githubLink: "#",
+  },
+  {
+    title: "IPOVCON 2025",
+    status: "Completed",
+    desc: "Website for the 6th International Conference on Poverty Alleviation and Sustainable Development.",
+    tech: ["WordPress", "PHP", "MySQL"],
+    img: project7,
+    visitLink: "https://ipovcon2025.ssu.edu.ph/",
+    githubLink: "#",
+  },
+  {
+    title: "MLBB Draft Simulator V1",
+    status: "Completed",
+    desc: "A web-based application for simulating drafts in Mobile Legends: Bang Bang.",
+    tech: ["Vue", "Node.js", "Laravel", "MySQL"],
+    img: project6,
+    visitLink: "https://mlbbdraftsim.intsace.tech/",
+    githubLink: "#",
   },
   {
     title: "Document Tracking",
@@ -53,7 +75,7 @@ export const projectData: ProjectItem[] = [
     tech: ["Vue", "Laravel", "PostgreSQL"],
     img: project3,
     visitLink: "#",
-    githubLink: "https://github.com/ssuict/doc-tracking",
+    githubLink: "#",
   },
   {
     title: "HR Recruitment System",
@@ -62,6 +84,6 @@ export const projectData: ProjectItem[] = [
     tech: ["React", "MongoDB", "Node.js"],
     img: project4,
     visitLink: "#",
-    githubLink: "https://github.com/ssuict/hr-recruitment",
+    githubLink: "#",
   },
 ];
