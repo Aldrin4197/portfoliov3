@@ -25,7 +25,7 @@ interface ProjectItem {
 export const projectData: ProjectItem[] = [
   {
     title: "Equity Access PH",
-    status: "On-going",
+    status: "Completed",
     desc: "Unified College Admission System for CHED",
     tech: ["Laravel", "MySQL", "Vue", "React"],
     img: project5,
@@ -65,7 +65,7 @@ export const projectData: ProjectItem[] = [
     desc: "A web-based application for simulating drafts in Mobile Legends: Bang Bang.",
     tech: ["Vue", "Node.js", "Laravel", "MySQL"],
     img: project6,
-    visitLink: "https://mlbbdraftsim.intsace.tech/",
+    visitLink: "https://mlbbdraftsim.intspace.tech/",
     githubLink: "#",
   },
   {
