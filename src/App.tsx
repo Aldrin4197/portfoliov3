@@ -13,6 +13,7 @@ import { FaArrowUp } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import Stats from "./components/stats";
 import ContactForm from "./components/contactform";
+import Services from "./components/services";
 
 function App() {
   // State to show/hide scroll-to-top button
@@ -65,6 +66,8 @@ function App() {
       <div className="w-full max-w-3xl justify-center mx-auto flex flex-col gap-8">
         <Avatar />
         <About />
+        <div className="divider"></div>
+        <Services />
         <div className="divider"></div>
         <Skills />
         <div className="divider"></div>

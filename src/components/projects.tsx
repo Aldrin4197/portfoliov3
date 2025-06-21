@@ -51,7 +51,7 @@ function Projects() {
           {projectData.map((project, index) => (
             <motion.div
               key={index}
-              className="card card-border bg-base-100 w-full shadow-md hover:border-primary transition duration-500 ease-in-out"
+              className="card card-border bg-base-100 w-full shadow-md border-gray-800 hover:border-primary transition duration-500 ease-in-out"
               variants={cardVariants}
             >
               <figure>
