@@ -9,7 +9,7 @@ import { MdDesignServices } from "react-icons/md";
 
 export const serviceData = [
   {
-    title: "Website Development",
+    title: "Fullstack Web Development",
     desc: "Responsive and optimized websites for businesses and individuals.",
     icon: Code,
   },
@@ -38,10 +38,14 @@ export const serviceData = [
     desc: "Creating user-friendly interfaces and experiences for applications.",
     icon: MdDesignServices, // Replace with actual icon component
   },
-{
-    title: "Custom Software Solutions",
+  {
+    title: "Project Management",
+    desc: "Efficient software planning and execution for projects.",
+    icon: BiCustomize, // Replace with actual icon component
+  },
+  {
+    title: "Custom Software",
     desc: "Tailored software solutions to meet specific business needs.",
     icon: BiCustomize, // Replace with actual icon component
   },
-
 ];

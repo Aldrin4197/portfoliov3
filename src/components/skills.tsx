@@ -19,7 +19,7 @@ function Skills() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <h2>Skills.</h2>
+          <h2>Tech Stack.</h2>
         </motion.div>
 
         {/* Badges container with animation */}
@@ -43,15 +43,22 @@ function Skills() {
           {[
             "Embedded Systems",
             "Laravel",
-            "Next.js",
-            "Python",
-            "Vite",
             "MySQL",
-            "MongoDB",
-            "TailwindCSS",
-            "WordPress",
             "Vue",
-            "Arduino",
+            "React",
+            "Node.js",
+            "MongoDB",
+            "PostgreSQL",
+            "PHP",
+            "WordPress",
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Git",
+            "Figma",
+            "RESTful APIs",
+            "Notion",
+            "Figma",
           ].map((skill, index) => (
             <motion.div
               key={index}

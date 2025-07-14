@@ -7,6 +7,7 @@ import project4 from "../assets/proj4.png";
 import project5 from "../assets/eaph.png";
 import project6 from "../assets/proj6.png";
 import project7 from "../assets/proj7.png";
+import project8 from "../assets/proj8.png";
 
 
 
@@ -24,6 +25,15 @@ interface ProjectItem {
 // Export the project data array
 export const projectData: ProjectItem[] = [
   {
+    title: "SSU Digital Assets Management System",
+    status: "Completed",
+    desc: "A comprehensive digital asset management system for SSU-ICT Unit.",
+    tech: ["Laravel", "MySQL", "Vue"],
+    img: project8,
+    visitLink: "https://dams.ssu.edu.ph/",
+    githubLink: "#",
+  },
+  {
     title: "Equity Access PH",
     status: "Completed",
     desc: "Unified College Admission System for CHED",
@@ -39,7 +49,7 @@ export const projectData: ProjectItem[] = [
     tech: ["Laravel", "MySQL", "Vue"],
     img: project1,
     visitLink: "https://icthrmo.ssuict.tech/",
-    githubLink: "https://github.com/ssuict/hrmo",
+    githubLink: "#",
   },
   {
     title: "Air Quality Monitoring",
@@ -69,7 +79,7 @@ export const projectData: ProjectItem[] = [
     githubLink: "#",
   },
   {
-    title: "Document Tracking",
+    title: "Document Tracker",
     status: "On-going",
     desc: "Simplifies and tracks document processing for student enrollment systems.",
     tech: ["Vue", "Laravel", "PostgreSQL"],
@@ -78,7 +88,7 @@ export const projectData: ProjectItem[] = [
     githubLink: "#",
   },
   {
-    title: "HR Recruitment System",
+    title: "Job Recruitment System",
     status: "On-going",
     desc: "Manages hiring processes with advanced features and seamless automation.",
     tech: ["React", "MongoDB", "Node.js"],
