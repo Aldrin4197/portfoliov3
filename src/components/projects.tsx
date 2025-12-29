@@ -1,6 +1,7 @@
 import { FaGithub } from "react-icons/fa";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import { projectData } from "../data/projectData";
 
 // Card animation variants
@@ -16,7 +17,7 @@ function Projects() {
 
   return (
     <>
-      <div ref={ref}>
+      <div ref={ref} id="projects">
         {/* Title with animation */}
         <motion.div
           className="text-4xl pb-8 text-center"
@@ -82,22 +83,32 @@ function Projects() {
 
                 {/* Card Actions */}
                 <div className="card-actions justify-end">
-                  <a
-                    href={project.visitLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn text-lg btn-neutral hover:btn-primary"
+                  <Link
+                    to={`/projects/${project.slug}`}
+                    className="btn text-lg btn-primary"
                   >
-                    Visit
-                  </a>
-                  <a
-                    href={project.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-primary transition-transform"
-                  >
-                    <FaGithub className="w-10 h-10 text-neutral hover:text-primary cursor-pointer" />
-                  </a>
+                    View Details
+                  </Link>
+                  {project.visitLink && project.visitLink !== "#" && (
+                    <a
+                      href={project.visitLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn text-lg btn-neutral hover:btn-primary"
+                    >
+                      Visit
+                    </a>
+                  )}
+                  {project.githubLink && project.githubLink !== "#" && (
+                    <a
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-primary transition-transform"
+                    >
+                      <FaGithub className="w-10 h-10 text-neutral hover:text-primary cursor-pointer" />
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
