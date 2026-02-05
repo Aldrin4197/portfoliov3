@@ -10,7 +10,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaArrowUp } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import Stats from "../components/stats";
-import ContactForm from "../components/contactform";
 import Services from "../components/services";
 import Feedback from "../components/feedback";
 import FeedbackViewer from "../components/feedbackViewer";
@@ -57,8 +56,6 @@ function Home() {
       <Certifications />
       <div className="divider"></div>
       <Hackathons />
-      <div className="divider"></div>
-      <ContactForm />
       <div className="divider"></div>
       <Feedback />
       <div className="divider"></div>

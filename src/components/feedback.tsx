@@ -1,11 +1,21 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import avatar from "../assets/ghib.png";
 
 interface FeedbackForm {
   name: string;
   email: string;
   rating: number;
   comment: string;
+}
+
+interface Feedback {
+  id: string;
+  name: string;
+  email: string;
+  rating: number;
+  comment: string;
+  timestamp: string;
 }
 
 function Feedback() {
@@ -18,6 +28,27 @@ function Feedback() {
   const [hoveredRating, setHoveredRating] = useState<number>(0);
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [feedbacks, setFeedbacks] = useState<Feedback[]>([]);
+
+  useEffect(() => {
+    loadFeedbacks();
+  }, [submitted]);
+
+  const loadFeedbacks = () => {
+    const storedFeedbacks = localStorage.getItem("feedbacks");
+    if (storedFeedbacks) {
+      setFeedbacks(JSON.parse(storedFeedbacks));
+    }
+  };
+
+  const calculateAverageRating = () => {
+    if (feedbacks.length === 0) return 0;
+    const totalStars = feedbacks.reduce((sum, fb) => sum + fb.rating, 0);
+    return (totalStars / feedbacks.length).toFixed(1);
+  };
+
+  const averageRating = calculateAverageRating();
+  const roundedRating = Math.round(parseFloat(averageRating) * 2) / 2;
 
   const handleRatingClick = (rating: number) => {
     setFormData({ ...formData, rating });
@@ -81,6 +112,148 @@ function Feedback() {
       transition={{ duration: 0.6 }}
       className="w-full"
     >
+      {/* Avatar and Rating Section */}
+      <div className="flex flex-col items-center justify-center gap-6 mb-8">
+        <motion.h2
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl font-bold text-primary text-center"
+        >
+          Rate Me.
+        </motion.h2>
+
+        <div className="flex items-center gap-6">
+          {/* Avatar Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="avatar"
+          >
+            <div className="w-24 h-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+              <img src={avatar} alt="Aldrin's Avatar" />
+            </div>
+          </motion.div>
+
+          {/* Rating Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-left"
+          >
+            {feedbacks.length > 0 ? (
+              <div className="flex flex-col gap-2 items-start">
+                <div className="flex items-center gap-2">
+                  <div className="rating rating-md rating-half">
+                    <input type="radio" name="header-rating" className="rating-hidden" />
+                    <input
+                      type="radio"
+                      name="header-rating"
+                      className="mask mask-star-2 mask-half-1 bg-orange-400"
+                      checked={roundedRating === 0.5}
+                      disabled
+                      readOnly
+                    />
+                    <input
+                      type="radio"
+                      name="header-rating"
+                      className="mask mask-star-2 mask-half-2 bg-orange-400"
+                      checked={roundedRating === 1}
+                      disabled
+                      readOnly
+                    />
+                    <input
+                      type="radio"
+                      name="header-rating"
+                      className="mask mask-star-2 mask-half-1 bg-orange-400"
+                      checked={roundedRating === 1.5}
+                      disabled
+                      readOnly
+                    />
+                    <input
+                      type="radio"
+                      name="header-rating"
+                      className="mask mask-star-2 mask-half-2 bg-orange-400"
+                      checked={roundedRating === 2}
+                      disabled
+                      readOnly
+                    />
+                    <input
+                      type="radio"
+                      name="header-rating"
+                      className="mask mask-star-2 mask-half-1 bg-orange-400"
+                      checked={roundedRating === 2.5}
+                      disabled
+                      readOnly
+                    />
+                    <input
+                      type="radio"
+                      name="header-rating"
+                      className="mask mask-star-2 mask-half-2 bg-orange-400"
+                      checked={roundedRating === 3}
+                      disabled
+                      readOnly
+                    />
+                    <input
+                      type="radio"
+                      name="header-rating"
+                      className="mask mask-star-2 mask-half-1 bg-orange-400"
+                      checked={roundedRating === 3.5}
+                      disabled
+                      readOnly
+                    />
+                    <input
+                      type="radio"
+                      name="header-rating"
+                      className="mask mask-star-2 mask-half-2 bg-orange-400"
+                      checked={roundedRating === 4}
+                      disabled
+                      readOnly
+                    />
+                    <input
+                      type="radio"
+                      name="header-rating"
+                      className="mask mask-star-2 mask-half-1 bg-orange-400"
+                      checked={roundedRating === 4.5}
+                      disabled
+                      readOnly
+                    />
+                    <input
+                      type="radio"
+                      name="header-rating"
+                      className="mask mask-star-2 mask-half-2 bg-orange-400"
+                      checked={roundedRating === 5}
+                      disabled
+                      readOnly
+                    />
+                  </div>
+                  <span className="text-lg font-bold">{averageRating}</span>
+                </div>
+                <p className="text-sm text-base-content/70 text-left">
+                  Based on {feedbacks.length} {feedbacks.length === 1 ? 'review' : 'reviews'}
+                </p>
+              </div>
+            ) : (
+              <div className="flex flex-col gap-2 items-start">
+                <p className="text-md text-base-content">
+                  Want to chat? Just shoot me a DM with a direct question on{" "}
+                  <a href="https://facebook.com">
+                    <span className="text-secondary font-bold">Facebook </span>
+                  </a>
+                  and I'll respond as soon as I can.
+                </p>
+              </div>
+            )}
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Feedback Form Card */}
       <div className="card bg-base-200 shadow-xl">
         <div className="card-body">
           <h2 className="card-title text-2xl font-bold mb-4">
