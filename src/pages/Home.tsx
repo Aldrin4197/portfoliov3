@@ -12,6 +12,8 @@ import { useEffect, useState } from "react";
 import Stats from "../components/stats";
 import ContactForm from "../components/contactform";
 import Services from "../components/services";
+import Feedback from "../components/feedback";
+import FeedbackViewer from "../components/feedbackViewer";
 
 function Home() {
   // State to show/hide scroll-to-top button
@@ -40,15 +42,15 @@ function Home() {
       <Avatar />
       <About />
       <div className="divider"></div>
-      <Services />
-      <div className="divider"></div>
       <Skills />
       <div className="divider"></div>
       <Stats />
       <div className="divider"></div>
-      <Projects />
-      <div className="divider"></div>
       <Timeline />
+      <div className="divider"></div>
+      <Services />
+      <div className="divider"></div>
+      <Projects />
       <div className="divider"></div>
       <Education />
       <div className="divider"></div>
@@ -57,6 +59,10 @@ function Home() {
       <Hackathons />
       <div className="divider"></div>
       <ContactForm />
+      <div className="divider"></div>
+      <Feedback />
+      <div className="divider"></div>
+      <FeedbackViewer />
       <div className="divider"></div>
 
       {/* Scroll-to-Top Button with Intro & Outro Animation */}

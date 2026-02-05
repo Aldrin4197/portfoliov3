@@ -14,7 +14,7 @@ function Skills() {
       <div ref={ref}>
         {/* Title with animation */}
         <motion.div
-          className="text-4xl font-bold text-primary gap-8 pb-8"
+          className="text-4xl font-bold text-primary gap-8 pb-8 text-center"
           initial={{ opacity: 0, y: -20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}
