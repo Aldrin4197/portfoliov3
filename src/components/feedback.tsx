@@ -34,10 +34,20 @@ function Feedback() {
     loadFeedbacks();
   }, [submitted]);
 
-  const loadFeedbacks = () => {
-    const storedFeedbacks = localStorage.getItem("feedbacks");
-    if (storedFeedbacks) {
-      setFeedbacks(JSON.parse(storedFeedbacks));
+  const loadFeedbacks = async () => {
+    try {
+      const response = await fetch('/api/get-feedbacks.php');
+      if (response.ok) {
+        const data = await response.json();
+        setFeedbacks(data);
+      }
+    } catch (error) {
+      console.error('Error loading feedbacks:', error);
+      // Fallback to localStorage if PHP endpoint fails
+      const storedFeedbacks = localStorage.getItem("feedbacks");
+      if (storedFeedbacks) {
+        setFeedbacks(JSON.parse(storedFeedbacks));
+      }
     }
   };
 
@@ -48,7 +58,7 @@ function Feedback() {
   };
 
   const averageRating = calculateAverageRating();
-  const roundedRating = Math.round(parseFloat(averageRating) * 2) / 2;
+  const roundedRating = Math.round(parseFloat(String(averageRating)) * 2) / 2;
 
   const handleRatingClick = (rating: number) => {
     setFormData({ ...formData, rating });
@@ -59,34 +69,32 @@ function Feedback() {
     setIsSubmitting(true);
 
     try {
-      // Get existing feedbacks from localStorage
-      const existingFeedbacks = localStorage.getItem("feedbacks");
-      const feedbacks = existingFeedbacks ? JSON.parse(existingFeedbacks) : [];
-
-      // Add new feedback with unique ID and timestamp
+      // Prepare new feedback
       const newFeedback = {
         id: `feedback_${Date.now()}`,
         ...formData,
         timestamp: new Date().toISOString(),
       };
 
-      feedbacks.push(newFeedback);
+      // Save to PHP backend
+      const response = await fetch('/api/save-feedback.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newFeedback),
+      });
 
-      // Save to localStorage
-      localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
-
-      // Also save to public JSON file for persistence (you can download it later)
-      console.log("Feedback saved:", newFeedback);
-      console.log(
-        "All feedbacks:",
-        JSON.stringify(feedbacks, null, 2)
-      );
-
-      setSubmitted(true);
-      setTimeout(() => {
-        setFormData({ name: "", email: "", rating: 0, comment: "" });
-        setSubmitted(false);
-      }, 3000);
+      if (response.ok) {
+        console.log("Feedback saved to file:", newFeedback);
+        setSubmitted(true);
+        setTimeout(() => {
+          setFormData({ name: "", email: "", rating: 0, comment: "" });
+          setSubmitted(false);
+        }, 3000);
+      } else {
+        throw new Error('Failed to save feedback');
+      }
     } catch (error) {
       console.error("Error submitting feedback:", error);
       alert("Failed to submit feedback. Please try again.");

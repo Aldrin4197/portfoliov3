@@ -20,12 +20,20 @@ function FeedbackViewer() {
     loadFeedbacks();
   }, [showViewer]);
 
-  const loadFeedbacks = () => {
-    const storedFeedbacks = localStorage.getItem("feedbacks");
-    if (storedFeedbacks) {
-      // Load all feedbacks
-      const allFeedbacks = JSON.parse(storedFeedbacks);
-      setFeedbacks(allFeedbacks);
+  const loadFeedbacks = async () => {
+    try {
+      const response = await fetch('/api/get-feedbacks.php');
+      if (response.ok) {
+        const data = await response.json();
+        setFeedbacks(data);
+      }
+    } catch (error) {
+      console.error('Error loading feedbacks:', error);
+      // Fallback to localStorage if PHP endpoint fails
+      const storedFeedbacks = localStorage.getItem("feedbacks");
+      if (storedFeedbacks) {
+        setFeedbacks(JSON.parse(storedFeedbacks));
+      }
     }
   };
 
@@ -39,7 +47,7 @@ function FeedbackViewer() {
   const averageRating = calculateAverageRating();
   
   // Round to nearest 0.5 for half-star display
-  const roundedRating = Math.round(parseFloat(averageRating) * 2) / 2;
+  const roundedRating = Math.round(parseFloat(String(averageRating)) * 2) / 2;
 
   const formatDate = (timestamp: string) => {
     return new Date(timestamp).toLocaleDateString("en-US", {
