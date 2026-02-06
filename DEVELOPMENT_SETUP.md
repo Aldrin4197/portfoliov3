@@ -19,7 +19,7 @@ Before you begin, ensure you have the following installed on your system:
 ### Required Software
 
 1. **Node.js** (v18 or higher)
-   - Download from: https://nodejs.org/
+   - Download from: https://nodejs.org/en/download/
    - Verify installation: `node --version`
 
 2. **npm** (comes with Node.js)
